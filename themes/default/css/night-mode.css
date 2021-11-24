@@ -73,7 +73,7 @@ button { color: #eee !important; }
 
 input { color: #eee !important; }
 
-li { color: #eee !important; background: #212121 !important; border-color: #444 !important; }
+li { color: #eee !important; background: #21212100 !important; border-color: #444 !important; }
 li.sort-comments a:hover { background: #3e3e3e !important; color: #eee !important; }
 
 .mejs-qualities-selected { color: #04abf2 !important; }
@@ -95,7 +95,7 @@ li.sort-comments a:hover { background: #3e3e3e !important; color: #eee !importan
 .user-setting-panel textarea { color: #eee !important; }
 .user-setting-panel select { color: #eee !important;box-shadow: 0 1px 0 0 #424242, 0 0 0 1px #424242; }
 
-.navbar-fixed-top { background: #212121 !important; border-bottom: none !important; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) !important; }
+.navbar-fixed-top { background: #f6abf099 !important; border-bottom: none !important; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) !important; }
 
 .dropdown-menu { background: #212121 !important; border-color: #444 !important; }
 .dropdown-menu > li > a:hover { background: #333 !important; color: #fff !important; }
@@ -222,7 +222,7 @@ body .bg-bubbles li { background-color: rgba(255, 255, 255, 0.15) !important; }
 
 .modal-footer { background-color: #272727; border-top: 1px solid #131313; }
 
-.content { background: #212121; box-shadow: 0 1px 0 0 #212121, 0 0 0 1px #212121; }
+.content { background: #fdadfe; box-shadow: 0 1px 0 0 #212121, 0 0 0 1px #212121; }
 
 .import-form-content { border-top: 1px solid #484848; }
 
