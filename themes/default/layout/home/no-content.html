@@ -97,7 +97,7 @@
 
 	.hoverMenu {
 		position: absolute;
-		top: 20vh;
+		top: 15vh;
 		right: 0px;
 		transform: translate(-50%, -50%);
 		margin: 0;
@@ -138,22 +138,30 @@
 		/* background-color: #aaa; */
 		padding: 40px;
 	}
-	.live {
+	.liveContent {
 		width: 40%;
 		height: 100%;
-		padding: 50px;
+		padding: 40px;
 		/* background-color: #bbb; */
 		display: flex;
+		margin-top: 75px;
+	}
+	.liveTv {
+		background-color: #aaa;
+		width: 300px;
+		height: 180px;
+		margin: 10px;
 	}
 	
 .mySlides1, .mySlides2 {
-	display: none
+	display: none;
 }
 img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+background-color: #fff;
+display: flex;
   position: relative;
   margin: auto;
 }
@@ -166,7 +174,7 @@ img {vertical-align: middle;}
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
+  color: black !important;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -182,8 +190,15 @@ img {vertical-align: middle;}
 
 /* On hover, add a grey background color */
 .prev:hover, .next:hover {
-  background-color: #f1f1f1;
-  color: black;
+  background-color: black;
+  color: #fff !important;
+}
+.dummyGrid {
+	width: 270px;
+	height: 150px;
+	float: left;
+	background-color: #bbb;
+	margin: 5px;
 }
 </style>
 <div class="page-margin">
@@ -311,15 +326,27 @@ img {vertical-align: middle;}
 				<div class="video_grid">
 					<div class="slideshow-container">
 						<div class="mySlides1">
-						  <!-- <img src="cashfree.png" style="width:100%"> -->
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
 						</div>
 					  
 						<div class="mySlides1">
-						  <!-- <img src="img_snow_wide.jpg" style="width:100%"> -->
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
 						</div>
 					  
 						<div class="mySlides1">
-						  <!-- <img src="img_mountains_wide.jpg" style="width:100%"> -->
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
+							<div class="dummyGrid"></div>
 						</div>
 					  
 						<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -327,7 +354,7 @@ img {vertical-align: middle;}
 					  </div>					  
 				</div>
 			</div>
-			<div class="live">
+			<div class="liveContent">
 				<ul class="_live" style="list-style: none;">
 					<li><button class="btn sdbtn">News</button></li>
 					<li><button class="btn sdbtn">Tv Shows</button></li>
@@ -336,7 +363,7 @@ img {vertical-align: middle;}
 					<li><button class="btn sdbtn">Toys Demo</button></li>
 					<li><button class="btn sdbtn">Movies</button></li>
 				</ul>
-
+				<div class="liveTv"></div>
 			</div>
 		</div>
 	</div>
