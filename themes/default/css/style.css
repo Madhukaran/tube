@@ -165,7 +165,7 @@ header .upload-button:hover {color: #fff !important;background: #b228c9 !importa
 header .import-button:hover {color: #fff !important;background: #ee457e !important;}
 header .live-button:hover {color: #fff !important;background: #4caf50 !important;}
 
-.content { background: #fff; width: 100%; box-shadow: 0 1px 0 0 #e3e4e8, 0 0 0 1px #f1f1f1; padding: 10px; margin-bottom: 20px; }
+.content { width: 100%; box-shadow: 0 1px 0 0 #e3e4e8, 0 0 0 1px #f1f1f1; padding: 10px; margin-bottom: 20px; }
 
 .mejs__container { max-height: 80%; }
 

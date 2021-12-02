@@ -1,6 +1,194 @@
+<style>
+	.carouselvid {
+		top: -80px !important;
+		position: relative !important;
+		width: 100vw;
+		height: 50vh;
+	}
+
+	.searchbar {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		top: 85%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 600px !important;
+		z-index: 999;
+		padding: 5px;
+	}
+
+	.sidenavbtn {
+		position: absolute;
+		top: 65%;
+		left: 10%;
+		transform: translate(-50%, -50%);
+	}
+
+	.bottomnav {
+		position: absolute;
+		top: 55vh;
+		right: 0px;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: row;
+	}
+
+	.sdbtn {
+		color: rgb(252, 245, 245) !important;
+		background-color: rgba(0, 0, 0, 0) !important;
+		border-color: #fff;
+		width: 120px;
+	}
+
+	.quickAccess {
+		color: rgb(165, 161, 161) !important;
+		background-color: #1c1c1c !important;
+	}
+
+	.title {
+		color: white;
+		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000 !important;
+	}
+
+	.bottomNavbtn {
+		align-items: center;
+		justify-content: center;
+		font-size: 15px;
+		margin: 5px;
+	}
+
+	.bottomNavbtn:hover {
+		color: #000 !important;
+		background-color: #ddd;
+	}
+
+	.playSeek {
+		position: absolute;
+		top: 55vh;
+		left: 10%;
+		transform: translate(-50%, -50%);
+	}
+
+	.seek {
+		z-index: 9999;
+		width: 100px;
+		height: 1px;
+		color: #aaa;
+		background-color: rgb(112, 110, 110);
+		margin: 0px;
+	}
+
+	.playButton {
+		position: absolute;
+		top: 50vh;
+		left: 8%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+	}
+
+	.playbtn:hover {
+		color: #fff;
+	}
+
+	.seek:hover {
+		color: #fff;
+	}
+
+	.hoverMenu {
+		position: absolute;
+		top: 20vh;
+		right: 0px;
+		transform: translate(-50%, -50%);
+		margin: 0;
+		color: #fff;
+	}
+
+	.hoverLeftMenu {
+		list-style: none;
+		position: fixed;
+		top: 50%;
+		right: -100px;
+		width: 150px;
+		transform: translate(-50%, -50%);
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.hoverLeftMenu ul {
+		color: #fff !important;
+		background-color: rgb(80 50 185 / 85%);
+	}
+
+	._hoverLeftMenu li {
+		display: flex;
+		padding: 10px;
+		margin: 2px;
+		list-style: none;
+		color: #fff !important;
+	}
+	.liveVideo {
+		width: 100vw;
+		height: 50vh;
+		display: flex;
+	}
+	.educationalContent {
+		width: 60%;
+		height: 100%;
+		/* background-color: #aaa; */
+		padding: 40px;
+	}
+	.live {
+		width: 40%;
+		height: 100%;
+		padding: 50px;
+		/* background-color: #bbb; */
+		display: flex;
+	}
+	
+.mySlides1, .mySlides2 {
+	display: none
+}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+</style>
 <div class="page-margin">
 	<div class="content">
-		<div class="top-video">
+		<!-- <div class="top-video">
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div class="empty_state">
@@ -13,6 +201,165 @@
 				</div>
 				<div class="clear"></div>
 			</div>
+		</div> -->
+		<div class="carouselvid">
+			<video style="object-fit:fill;" width="100%" height="120%" autoplay muted loop>
+				<source src="http://honestelite.com/videos/video.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+			<div>
+				<div class="searchbar">
+					<div style="display: flex;flex-direction: row;">
+						<button class="btn quickAccess">Quick Access</button>
+						<input type="text" class="form-control" id="search-bar" name="keyword"
+							placeholder="Search Video, TV Series, Movie, Documentaries, Shows & Live"
+							autocomplete="off">
+						<div style="background-color:#1c1c1c;padding: 2px;">
+							<svg style="margin-top:6px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"
+								onclick="javascript:$('.search-header input').focus();">
+								<circle cx="11" cy="11" r="8"></circle>
+								<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+							</svg>
+						</div>
+					</div>
+					<div style="display:flex;justify-content: center;">
+						<h3 style="letter-spacing: 3px;margin: 0px;padding: 2px;" class="title">SENSUAL PLAYGROUND</h3>
+					</div>
+					<div style="display:flex;justify-content: center; margin: 0px;padding: 0px;">
+						<h5 style="letter-spacing: 5px;" class="title">Exploring Love,Relationship issues & Sensual
+							world</h5>
+					</div>
+				</div>
+				<div style="display:flex;flex-direction:column" class="sidenavbtn">
+					<ul style="list-style-type:none;">
+						<li><button class="btn sdbtn">NEED TO KNOW</button></li>
+						<li><button class="btn sdbtn">SHOPPING</button></li>
+						<li><button class="btn sdbtn">INTERESTING</button></li>
+						<li><button class="btn sdbtn">GALLERY</button></li>
+						<li><button class="btn sdbtn">NEWS UPDATES</button></li>
+					</ul>
+				</div>
+				<div class="playButton">
+					<svg class="playbtn" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+						<path
+							d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+					</svg>
+				</div>
+				<div class="playSeek">
+					<a><span>03:04</span>
+						<hr class="seek">
+					</a>
+				</div>
+				<div class="hoverMenu">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-list" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+					</svg>
+				</div>
+				<div class="hoverLeftMenu">
+					<ul class="_hoverLeftMenu">
+						<li>
+							<div>Sales Rep</div>
+							<div>
+
+							</div>
+						</li>
+						<li>Social Interaction</li>
+						<li>Shopping</li>
+						<li>Most Viewed</li>
+						<li>
+							<span>News Updates&nbsp;</span>
+							<!-- <div>
+								<svg style="margin: 2px;padding: 2px;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+									class="bi bi-telegram" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+								</svg>
+							</div> -->
+						</li>
+						<li>Modelling Gallery</li>
+						<li>Advertise</li>
+						<li>All General Knowledge</li>
+					</ul>
+				</div>
+				<div class="bottomnav">
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">TRENDING</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">LIBRARY</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">SUBSCRIPTIONS</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">CELL VIDEOS</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">GALLERY</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">NEWS UPDATES</a>
+					<a class="bottomNavbtn" href="#">|</a>
+					<a class="bottomNavbtn" href="#">PODCAST</a>
+					<a class="bottomNavbtn" href="#">|</a>
+				</div>
+			</div>
+		</div>
+		<div class="liveVideo">
+			<div class="educationalContent">
+				<p>Educational Videos</p>
+				<div class="video_grid">
+					<div class="slideshow-container">
+						<div class="mySlides1">
+						  <!-- <img src="cashfree.png" style="width:100%"> -->
+						</div>
+					  
+						<div class="mySlides1">
+						  <!-- <img src="img_snow_wide.jpg" style="width:100%"> -->
+						</div>
+					  
+						<div class="mySlides1">
+						  <!-- <img src="img_mountains_wide.jpg" style="width:100%"> -->
+						</div>
+					  
+						<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+					  </div>					  
+				</div>
+			</div>
+			<div class="live">
+				<ul class="_live" style="list-style: none;">
+					<li><button class="btn sdbtn">News</button></li>
+					<li><button class="btn sdbtn">Tv Shows</button></li>
+					<li><button class="btn sdbtn">Talk Shows</button></li>
+					<li><button class="btn sdbtn">Reality Shows</button></li>
+					<li><button class="btn sdbtn">Toys Demo</button></li>
+					<li><button class="btn sdbtn">Movies</button></li>
+				</ul>
+
+			</div>
 		</div>
 	</div>
 </div>
+<script>
+	var slideIndex = [1,1];
+	var slideId = ["mySlides1", "mySlides2"]
+	showSlides(1, 0);
+	showSlides(1, 1);
+	
+	function plusSlides(n, no) {
+	  showSlides(slideIndex[no] += n, no);
+	}
+	
+	function showSlides(n, no) {
+	  var i;
+	  var x = document.getElementsByClassName(slideId[no]);
+	  if (n > x.length) {slideIndex[no] = 1}    
+	  if (n < 1) {slideIndex[no] = x.length}
+	  for (i = 0; i < x.length; i++) {
+		 x[i].style.display = "none";  
+	  }
+	  x[slideIndex[no]-1].style.display = "block";  
+	}
+	</script>
+	

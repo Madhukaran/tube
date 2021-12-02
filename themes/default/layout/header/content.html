@@ -1,3 +1,49 @@
+<style>
+	.livebtn {
+		color: red;
+	}
+
+	.dropbtn {
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: rgba(99, 95, 95, 0.911);
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.651);
+		z-index: 1;
+	}
+
+	.dropdown-content a {
+		color: rgba(107, 105, 105, 0.897);
+		padding: 2px 10px !important;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content a:hover {
+		background-color: #ddd;
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	/* .dropdown:hover .dropbtn {
+		background-color: #3e8e41;
+	} */
+</style>
+
 <nav class="navbar navbar-findcond navbar-fixed-top header-layout">
 	<div class="pt_main_hdr" id="header_change">
 		<div class="navbar-header">
@@ -12,31 +58,68 @@
 			<?php } ?>
 			<a class="navbar-brand logo-img" href="{{LINK }}" itemprop="url">
 				<?php if ((!empty($pt->get_video) && $pt->get_video->is_movie) || $pt->page == 'movies') { ?>
-					<img itemprop="logo" src="{{CONFIG theme_url}}/img/logo-light.png" alt="{{CONFIG title}}">
+				<img itemprop="logo" src="{{CONFIG theme_url}}/img/logo-light.png" alt="{{CONFIG title}}">
 				<?php } else { ?>
-					<img itemprop="logo" src="{{CONFIG theme_url}}/img/<?php echo ($pt->mode != 'night') ? 'logo' : 'logo-light';?>.png" alt="{{CONFIG title}}">
+				<img itemprop="logo"
+					src="{{CONFIG theme_url}}/img/<?php echo ($pt->mode != 'night') ? 'logo' : 'logo-light';?>.png"
+					alt="{{CONFIG title}}">
 				<?php } ?>
 			</a>
 			<ul class="nav navbar-nav">
-				<li class="pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>" id="latest_menu_" tooltip="Lifestyle" flow="down">
-					<a href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
+				<li class="dropdown pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>"
+					id="latest_menu_" tooltip="Lifestyle" flow="top">
+					<a class="dropbtn" href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
 						Lifestyle &#x203A;
-				    </a>
+					</a>
+					<div class="dropdown-content">
+						<a href="#">Straight</a>
+						<a href="#">LGBTQ</a>
+						<a href="#">Other</a>
+					</div>
 				</li>
-				<li class="pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>" id="latest_menu_" tooltip="Browse" flow="down">
-					<a href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
+				<li class="dropdown pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>"
+					id="latest_menu_" tooltip="Browse" flow="top">
+					<a class="dropbtn" href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
 						Browse &#x203A;
-				    </a>
+					</a>
+					<div class="dropdown-content">
+						<a href="#">Playground</a>
+						<a href="#">Videos</a>
+						<a href="#">Fantasy Videos</a>
+						<a href="#">Extreme Videos</a>
+						<a href="#">Movies</a>
+						<a href="#">Documentation</a>
+						<a href="#"><span class="livebtn">&#x2022;&nbsp;</span>Live</a>
+						<a href="#">Movies</a>
+					</div>
 				</li>
-				<li class="pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>" id="latest_menu_" tooltip="Features" flow="down">
-					<a href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
+				<li class="dropdown pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>"
+					id="latest_menu_" tooltip="Features" flow="top">
+					<a class="dropbtn" href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
 						Features &#x203A;
-				    </a>
+					</a>
+					<div class="dropdown-content">
+						<a href="#">Daily motion Video</a>
+						<a href="#">Self Hosted Video</a>
+						<a href="#">User Profile</a>
+						<a href="#">Playlists</a>
+						<a href="#">User Created Playlist</a>
+						<a href="#">Favourite Playlist</a>
+						<a href="#">Watch later Playlist</a>
+						<a href="#">All News featuring</a>
+					</div>
 				</li>
-				<li class="pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>" id="latest_menu_" tooltip="Live" flow="down">
-					<a href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
+				<li class="dropdown pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>"
+					id="latest_menu_" tooltip="Live" flow="top">
+					<a class="dropbtn" href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
 						Live &#x203A;
-				    </a>
+					</a>
+					<div class="dropdown-content">
+						<a href="#">TV</a>
+						<a href="#">Podcast</a>
+						<a href="#">Misc Lounges</a>
+						<a href="#">Modeling Gallery</a>
+					</div>
 				</li>
 			</ul>
 			<!-- <?php if ($pt->page != 'login') { ?>
@@ -86,7 +169,7 @@
 				<?php } ?>
 			</ul>
 			<?php } ?> -->
-			
+
 			<!-- <form class="navbar-form navbar-left search-header" role="search" action="{{LINK search}}" method="GET">
                 <div class="form-group">
                     <input type="text" class="form-control" id="search-bar" name="keyword" placeholder="{{LANG search_keyword}}" autocomplete="off" value="{{SEARCH_KEYWORD}}"> 
@@ -116,7 +199,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<!-- <?php if (IS_LOGGED) { ?>
 				<?php if (($pt->config->who_upload == 'admin' && PT_IsAdmin()) || $pt->config->who_upload == 'all') { ?> -->
-				<!-- <?php if ($pt->config->upload_system == 'on' && !$pt->user->suspend_upload) { ?> 
+			<!-- <?php if ($pt->config->upload_system == 'on' && !$pt->user->suspend_upload) { ?> 
 				    <li class="hide-from-mobile">
 						<a href="{{LINK upload-video}}" class="btn upload-button" data-load="?link1=upload-video">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z" /></svg>
@@ -124,8 +207,8 @@
 						</a>
 					</li>
 				<?php } ?> -->
-				<!-- <?php } ?> -->
-				<!-- <?php if ($pt->config->import_system == 'on' && !$pt->user->suspend_import) { ?> 
+			<!-- <?php } ?> -->
+			<!-- <?php if ($pt->config->import_system == 'on' && !$pt->user->suspend_import) { ?> 
 				    <li class="hide-from-mobile">
 						<a href="{{LINK import-video}}" class="btn import-button" data-load="?link1=import-video">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17,13L12,18L7,13H10V9H14V13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z" /></svg>
@@ -133,7 +216,7 @@
 						</a>
 					</li>
 				<?php } ?> -->
-				<!-- <?php if ($pt->config->live_video == 1 && ($pt->config->who_use_live == 'all' || ($pt->config->who_use_live == 'admin' && PT_IsAdmin()) || ($pt->config->who_use_live == 'pro' && $pt->user->is_pro > 0))) { ?>
+			<!-- <?php if ($pt->config->live_video == 1 && ($pt->config->who_use_live == 'all' || ($pt->config->who_use_live == 'admin' && PT_IsAdmin()) || ($pt->config->who_use_live == 'pro' && $pt->user->is_pro > 0))) { ?>
 					<li class="hide-from-mobile">
 						<a href="{{LINK live}}" class="btn live-button" data-load="?link1=live">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17,10.5L21,6.5V17.5L17,13.5V17A1,1 0 0,1 16,18H4A1,1 0 0,1 3,17V7A1,1 0 0,1 4,6H16A1,1 0 0,1 17,7V10.5M14,16V15C14,13.67 11.33,13 10,13C8.67,13 6,13.67 6,15V16H14M10,8A2,2 0 0,0 8,10A2,2 0 0,0 10,12A2,2 0 0,0 12,10A2,2 0 0,0 10,8Z"></path></svg>
@@ -158,7 +241,7 @@
 					</a>
 				</li>
 			<?php } ?> -->
-		<!-- <?php } ?>
+			<!-- <?php } ?>
 			<li class="show-in-mobile pull-left top-header">
 				<a href="#" class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg> </a>
 			</li>
@@ -188,9 +271,13 @@
 				</li>
 			<?php endif; ?> -->
 			{{SIDE_HEADER}}
+			<?php if (IS_LOGGED): ?>
 			<li>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" /></svg> <span class="caret"></span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="currentColor"
+							d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+					</svg>
 					&nbsp;Login
 				</a>
 			</li>
@@ -200,6 +287,7 @@
 					&nbsp;Register
 				</a>
 			</li>
+			<?php endif; ?>
 		</ul>
 	</div>
 </nav>
@@ -217,44 +305,44 @@
 
 <?php if (IS_LOGGED): ?>
 <script>
-	jQuery(document).ready(function($) {
-		pt_get_notifications({type:'new'});
+	jQuery(document).ready(function ($) {
+		pt_get_notifications({ type: 'new' });
 		UpdateInfo();
-		
-		$("#get-notifications").click(function(event) {
+
+		$("#get-notifications").click(function (event) {
 			if ($('#notifications').css('display') == 'none') {
 				var notfi_cont = $("ul.notfi-dropdown");
-				
+
 				if ($("span#new-notifications").html() != '') {
 					$(this).find('span#new-notifications').empty();
 				}
 
-				pt_get_notifications({sa:1});
+				pt_get_notifications({ sa: 1 });
 			}
 		});
 
-		setInterval(function(){
-			pt_get_notifications({type:'new'});
+		setInterval(function () {
+			pt_get_notifications({ type: 'new' });
 		}, 6000);
 	});
 	function UpdateInfo() {
-		$.post('{{LINK aj/user/update_info}}?hash=' + $('.main_session').val(), function(data, textStatus, xhr) {});
+		$.post('{{LINK aj/user/update_info}}?hash=' + $('.main_session').val(), function (data, textStatus, xhr) { });
 	}
 
-	function pt_get_notifications(args){
+	function pt_get_notifications(args) {
 		if (!args) {
 			args = {};
 		}
 		var notfi_cont = $("ul.notfi-dropdown");
-		var notfi_set  = $("ul#notifications");
-		
+		var notfi_set = $("ul#notifications");
+
 		defparams = {
 			type: false,
-			sa:false
+			sa: false
 		}
 
-		options = Object.assign(defparams,args);
-		data    = {'hash':$('.main_session').val()};
+		options = Object.assign(defparams, args);
+		data = { 'hash': $('.main_session').val() };
 
 		if (options['type']) {
 			data['t'] = options['type'];
@@ -269,84 +357,84 @@
 			url: '{{LINK aj/get_notifications}}',
 			type: 'GET',
 			dataType: 'json',
-			data:data
+			data: data
 		})
-		.done(function(data) {
-			if (data.status == 200) {
-				if (data.new) {
-					$("span#new-notifications").html($('<b>',{
-						text:data.new
+			.done(function (data) {
+				if (data.status == 200) {
+					if (data.new) {
+						$("span#new-notifications").html($('<b>', {
+							text: data.new
+						}));
+					}
+					else {
+						notfi_set.find('b').text(data.len);
+						notfi_set.find('ul').html(data.html);
+					}
+				}
+				else if (data.status == 304 && options['sa']) {
+					notfi_set.find('ul').html($("<li>", {
+						class: 'no-notifications',
+						text: "{{LANG no_notifications}}"
 					}));
 				}
-				else{
-					notfi_set.find('b').text(data.len);
-					notfi_set.find('ul').html(data.html);
-				}			
-			}
-			else if(data.status == 304 && options['sa']){
-				notfi_set.find('ul').html($("<li>",{
-					class:'no-notifications',
-					text: "{{LANG no_notifications}}"
-				}));
-			}
 
-			if (data.count_messages > 0) {
-				$('#new-messages').html('<b>' + data.count_messages + '</b>');
-			} else {
-				$('#new-messages').html('');
-			}
+				if (data.count_messages > 0) {
+					$('#new-messages').html('<b>' + data.count_messages + '</b>');
+				} else {
+					$('#new-messages').html('');
+				}
 
-			if (options['sa']) {notfi_set.find('i.spin').addClass('hidden');}
-			
-		})
-		.fail(function() {
-			console.log("error");
-		});
+				if (options['sa']) { notfi_set.find('i.spin').addClass('hidden'); }
+
+			})
+			.fail(function () {
+				console.log("error");
+			});
 	}
 </script>
 <?php endif ?>
 
 <script>
-$('.search-icon').on('click', function(event) {
-	event.preventDefault();
-	$('.search-bar').toggleClass('hidden');
-});
+	$('.search-icon').on('click', function (event) {
+		event.preventDefault();
+		$('.search-bar').toggleClass('hidden');
+	});
 
-$('#open_slide').on('click', function(event) {
-	event.preventDefault();
-	$('body').toggleClass('side_open');
-});
+	$('#open_slide').on('click', function (event) {
+		event.preventDefault();
+		$('body').toggleClass('side_open');
+	});
 
-$('#search-bar').keyup(function(event) {
-	var search_value = $(this).val();
-	var search_dropdown = $('.search-dropdown');
-	if (search_value == '') {
-		search_dropdown.addClass('hidden');
-		search_dropdown.empty();
-		return false;
-	} else {
-		search_dropdown.removeClass('hidden');
-	}
-    $.post('{{LINK aj/search}}', {search_value: search_value}, function(data, textStatus, xhr) {
-    	if (data.status == 200) {
-    		search_dropdown.html(data.html);
-    	} else {
-	       search_dropdown.addClass('hidden');
-		   search_dropdown.empty();
-		   return false;
-    	}
-    });
-});
+	$('#search-bar').keyup(function (event) {
+		var search_value = $(this).val();
+		var search_dropdown = $('.search-dropdown');
+		if (search_value == '') {
+			search_dropdown.addClass('hidden');
+			search_dropdown.empty();
+			return false;
+		} else {
+			search_dropdown.removeClass('hidden');
+		}
+		$.post('{{LINK aj/search}}', { search_value: search_value }, function (data, textStatus, xhr) {
+			if (data.status == 200) {
+				search_dropdown.html(data.html);
+			} else {
+				search_dropdown.addClass('hidden');
+				search_dropdown.empty();
+				return false;
+			}
+		});
+	});
 
-jQuery(document).click(function(event){
-    if (!(jQuery(event.target).closest(".search-dropdown").length)) {
-        jQuery('.search-dropdown').addClass('hidden');
-    }
-});
+	jQuery(document).click(function (event) {
+		if (!(jQuery(event.target).closest(".search-dropdown").length)) {
+			jQuery('.search-dropdown').addClass('hidden');
+		}
+	});
 
-jQuery(document).click(function(event){
-    if (!(jQuery(event.target).closest("#open_slide, .yp_side_drawer").length)) {
-        jQuery('body').removeClass('side_open');
-    }
-});
+	jQuery(document).click(function (event) {
+		if (!(jQuery(event.target).closest("#open_slide, .yp_side_drawer").length)) {
+			jQuery('body').removeClass('side_open');
+		}
+	});
 </script>
