@@ -42,6 +42,14 @@
 	/* .dropdown:hover .dropbtn {
 		background-color: #3e8e41;
 	} */
+
+	.dot {
+  height: 13px;
+  width: 13px;
+  background-color: #ef4eff;
+  border-radius: 50%;
+  display: inline-block;
+}
 </style>
 
 <nav class="navbar navbar-findcond navbar-fixed-top header-layout">
@@ -112,7 +120,7 @@
 				<li class="dropdown pt_hide-from-mobile <?php echo ($pt->page == 'latest') ? 'active': '';?>"
 					id="latest_menu_" tooltip="Live" flow="top">
 					<a class="dropbtn" href="{{LINK videos/latest}}" data-load="?link1=videos&page=latest">
-						Live &#x203A;
+						<span class="dot"&nbsp;></span>&nbsp;Live &#x203A;
 					</a>
 					<div class="dropdown-content">
 						<a href="#">TV</a>
@@ -121,6 +129,7 @@
 						<a href="#">Modeling Gallery</a>
 					</div>
 				</li>
+
 			</ul>
 			<!-- <?php if ($pt->page != 'login') { ?>
 			<ul class="nav navbar-nav sec_lay_hdr">
@@ -197,6 +206,32 @@
 			</ul>-->
 		</div>
 		<ul class="nav navbar-nav navbar-right">
+			  
+			<li style="cursor: pointer;"><a data-toggle="modal" data-target="#loginModal"><i class="bi bi-person"></i> Login</i>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16" style="float: left;width: 15px;cursor: pointer;">
+					<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+				  </svg>
+				</a></li>
+				   <li style="cursor: pointer;"><a data-toggle="modal" data-target="#loginModal"><i class="bi bi-door-open-fill"></i> Register
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16" style="float: left;width: 15px;cursor: pointer;">
+						<path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+					  </svg>
+					</a></li>
+
+					<li><a data-toggle="modal" data-target="#loginModal"> <img src="themes\default\img\bh.png" style="width: 20px;height:20px;margin-top: -3px;cursor: pointer;"></a></li>
+				    <li><a data-toggle="modal" data-target="#loginModal"> <label style="font-size: 10px;margin-left: 17px;background-color: #e436f4d6;width: 80px;margin-top: -10px;cursor: pointer;">  Upload sensual, Porn is Prohibited</label><i class="bi bi-upload"></i>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16" style="margin-top: -100px;margin-right: 80px;margin-left: -55px;cursor: pointer;">
+							<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+							<path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+						  </svg>						 
+						</a></li>
+
+						<li><a data-toggle="modal" data-target="#loginModal"><i class="bi bi-moon"></i>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16" style="background: white;width: 30px;height: 30px;margin-left: -30px;cursor: pointer;">
+								<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+							  </svg>
+							</a></li>
+				   
 			<!-- <?php if (IS_LOGGED) { ?>
 				<?php if (($pt->config->who_upload == 'admin' && PT_IsAdmin()) || $pt->config->who_upload == 'all') { ?> -->
 			<!-- <?php if ($pt->config->upload_system == 'on' && !$pt->user->suspend_upload) { ?> 

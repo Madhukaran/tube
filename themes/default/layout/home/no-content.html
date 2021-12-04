@@ -38,7 +38,13 @@
 		color: rgb(252, 245, 245) !important;
 		background-color: rgba(0, 0, 0, 0) !important;
 		border-color: #fff;
-		width: 120px;
+		width: 100px;
+		font-size: 10px;
+	}
+
+	.sdbtn:hover {
+		background-color: #fff !important;
+		color: black !important;
 	}
 
 	.quickAccess {
@@ -115,29 +121,74 @@
 		padding: 0px;
 	}
 
+	.sideHoverMenu {
+		width: 125px;
+		background-color: rgb(80 50 185 / 85%);
+		display: flex;
+		flex-direction: column;
+		margin: 2px;
+		position: fixed;
+		top: 50%;
+		right: -70px;
+		transform: translate(-50%, -50%);
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.d-none {
+		display: none;
+	}
+
+	.sideMenuItem {
+		display: flex;
+		height: 50px;
+		width: 100%;
+		margin: 1px;
+	}
+
+	.sideMenuName {
+		width: 55%;
+		word-wrap: break-word;
+		padding: 5px;
+		color: #fff;
+		font-size: 11px;
+	}
+
+	.sideMenuEmoji {
+		width: 30%;
+		padding: 10px;
+	}
+
 	.hoverLeftMenu ul {
 		color: #fff !important;
 		background-color: rgb(80 50 185 / 85%);
 	}
 
+	.icn {
+		margin: 0px;
+	}
+
 	._hoverLeftMenu li {
 		display: flex;
 		padding: 10px;
-		margin: 2px;
 		list-style: none;
 		color: #fff !important;
+		text-align: left;
 	}
+
 	.liveVideo {
 		width: 100vw;
 		height: 50vh;
 		display: flex;
 	}
+
 	.educationalContent {
 		width: 60%;
 		height: 100%;
 		/* background-color: #aaa; */
 		padding: 40px;
 	}
+
 	.liveContent {
 		width: 40%;
 		height: 100%;
@@ -146,60 +197,87 @@
 		display: flex;
 		margin-top: 75px;
 	}
+
 	.liveTv {
 		background-color: #aaa;
 		width: 300px;
 		height: 180px;
 		margin: 10px;
 	}
-	
-.mySlides1, .mySlides2 {
-	display: none;
-}
-img {vertical-align: middle;}
 
-/* Slideshow container */
-.slideshow-container {
-background-color: #fff;
-display: flex;
-  position: relative;
-  margin: auto;
-}
+	.mySlides1,
+	.mySlides2 {
+		display: none;
+	}
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: black !important;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
+	img {
+		vertical-align: middle;
+	}
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+	/* Slideshow container */
+	.slideshow-container {
+		background-color: #fff;
+		display: flex;
+		position: relative;
+		margin: auto;
+	}
 
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: black;
-  color: #fff !important;
-}
-.dummyGrid {
-	width: 270px;
-	height: 150px;
-	float: left;
-	background-color: #bbb;
-	margin: 5px;
-}
+	/* Next & previous buttons */
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 16px;
+		margin-top: -22px;
+		color: black !important;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a grey background color */
+	.prev:hover,
+	.next:hover {
+		background-color: black;
+		color: #fff !important;
+	}
+
+	.dummyGrid {
+		width: 270px;
+		height: 150px;
+		float: left;
+		background-color: #bbb;
+		margin: 5px;
+	}
+
+	.sensualTitle {
+		font: bold 35px Century Gothic, Arial;
+		width: 100%;
+		height: 120px;
+		margin: -25px !important;
+	}
+
+	._sensualTitle {
+		fill: none;
+		stroke: #fff;
+		stroke-width: .5px;
+		stroke-linejoin: round;
+		/* animation       : 2s pulsate infinite; */
+	}
+
+	/* @keyframes pulsate {
+  50%{ stroke-width:5px }
+} */
 </style>
 <div class="page-margin">
 	<div class="content">
@@ -240,7 +318,10 @@ display: flex;
 						</div>
 					</div>
 					<div style="display:flex;justify-content: center;">
-						<h3 style="letter-spacing: 3px;margin: 0px;padding: 2px;" class="title">SENSUAL PLAYGROUND</h3>
+						<!-- <h3 style="letter-spacing: 3px;margin: 0px;padding: 2px;" class="title">SENSUAL PLAYGROUND</h3> -->
+						&nbsp;<svg class="sensualTitle" viewBox="0 0 400 50">
+							<text class="_sensualTitle" y="40">Sensual Playground</text>
+						</svg>
 					</div>
 					<div style="display:flex;justify-content: center; margin: 0px;padding: 0px;">
 						<h5 style="letter-spacing: 5px;" class="title">Exploring Love,Relationship issues & Sensual
@@ -264,42 +345,117 @@ display: flex;
 					</svg>
 				</div>
 				<div class="playSeek">
-					<a><span>03:04</span>
+					<a><span>03/04</span>
 						<hr class="seek">
 					</a>
 				</div>
 				<div class="hoverMenu">
-					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+					<button style="width: 50px;" class="btn sdbtn" onclick="document.getElementById(`sideHoverMenu`).classList.toggle(`d-none`	)">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
 						class="bi bi-list" viewBox="0 0 16 16">
 						<path fill-rule="evenodd"
 							d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
 					</svg>
+					</button>
 				</div>
-				<div class="hoverLeftMenu">
-					<ul class="_hoverLeftMenu">
-						<li>
-							<div>Sales Rep</div>
-							<div>
-
-							</div>
-						</li>
-						<li>Social Interaction</li>
-						<li>Shopping</li>
-						<li>Most Viewed</li>
-						<li>
-							<span>News Updates&nbsp;</span>
-							<!-- <div>
-								<svg style="margin: 2px;padding: 2px;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-									class="bi bi-telegram" viewBox="0 0 16 16">
-									<path
-										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
-								</svg>
-							</div> -->
-						</li>
-						<li>Modelling Gallery</li>
-						<li>Advertise</li>
-						<li>All General Knowledge</li>
-					</ul>
+				<div id="sideHoverMenu" class="sideHoverMenu">
+					<div class="sideMenuItem">
+						<div style="width: 40%;" class="sideMenuName">
+							Sales Rep
+						</div>
+						<div class="sideMenuEmoji">
+							<img height="32" width="64" src="https://svgsilh.com/svg/919973.svg" />
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							Social Interaction
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-house" viewBox="0 0 32 32">
+								<path fill-rule="evenodd"
+									d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+								<path fill-rule="evenodd"
+									d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							Shopping
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-cart-fill" viewBox="0 0 32 32">
+								<path
+									d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							Most Viewed
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-eye-fill" viewBox="0 0 32 32">
+								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+								<path
+									d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							News Upldates
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-telegram" viewBox="0 0 32 32">
+								<path
+									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							Modelling Gallery
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-envelope" viewBox="0 0 32 32">
+								<path
+									d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							Advertise
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-geo-alt" viewBox="0 0 32 32">
+								<path
+									d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+								<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+							</svg>
+						</div>
+					</div>
+					<div class="sideMenuItem">
+						<div class="sideMenuName">
+							All General Knowledge
+						</div>
+						<div class="sideMenuEmoji">
+							<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+								class="bi bi-info-circle" viewBox="0 0 32 32">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+								<path
+									d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+							</svg>
+						</div>
+					</div>
 				</div>
 				<div class="bottomnav">
 					<a class="bottomNavbtn" href="#">|</a>
@@ -333,7 +489,7 @@ display: flex;
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
 						</div>
-					  
+
 						<div class="mySlides1">
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
@@ -341,17 +497,17 @@ display: flex;
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
 						</div>
-					  
+
 						<div class="mySlides1">
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
 							<div class="dummyGrid"></div>
 						</div>
-					  
+
 						<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
 						<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-					  </div>					  
+					</div>
 				</div>
 			</div>
 			<div class="liveContent">
@@ -369,24 +525,23 @@ display: flex;
 	</div>
 </div>
 <script>
-	var slideIndex = [1,1];
+	var slideIndex = [1, 1];
 	var slideId = ["mySlides1", "mySlides2"]
 	showSlides(1, 0);
 	showSlides(1, 1);
-	
+
 	function plusSlides(n, no) {
-	  showSlides(slideIndex[no] += n, no);
+		showSlides(slideIndex[no] += n, no);
 	}
-	
+
 	function showSlides(n, no) {
-	  var i;
-	  var x = document.getElementsByClassName(slideId[no]);
-	  if (n > x.length) {slideIndex[no] = 1}    
-	  if (n < 1) {slideIndex[no] = x.length}
-	  for (i = 0; i < x.length; i++) {
-		 x[i].style.display = "none";  
-	  }
-	  x[slideIndex[no]-1].style.display = "block";  
+		var i;
+		var x = document.getElementsByClassName(slideId[no]);
+		if (n > x.length) { slideIndex[no] = 1 }
+		if (n < 1) { slideIndex[no] = x.length }
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex[no] - 1].style.display = "block";
 	}
-	</script>
-	
+</script>
