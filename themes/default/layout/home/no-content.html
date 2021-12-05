@@ -1,3 +1,4 @@
+<link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
 <style>
 	.carouselvid {
 		top: -80px !important;
@@ -23,6 +24,47 @@
 		top: 65%;
 		left: 10%;
 		transform: translate(-50%, -50%);
+	}
+
+	.footerNav {
+		display: flex;
+		position: absolute;
+		top: 52vh;
+		color: #fff;
+		left: 50vh;
+		/*   background-color:#aaa; */
+	}
+
+	.footerPrev,.footerNext {
+		color: #fff;
+		padding: 2px;
+	}
+	.footerPrev:hover {
+		color:black !important;
+		background-color: pink;
+	}
+	.footerNext:hover {
+		color:black !important;
+		background-color: pink;
+	}
+
+	.footerNavItem {
+		margin: 10px;
+		padding: 5px;
+		/*   background-color:#bbb; */
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		font-size: 18px;
+		color: #fff !important;
+	}
+
+	.footerNavItemSeperator {
+		margin: 10px;
+		padding: 5px;
+		font-size: 25px;
+		/*   background-color:#bbb; */
+		max-width: 10px;
 	}
 
 	.bottomnav {
@@ -261,7 +303,9 @@
 	}
 
 	.sensualTitle {
-		font: bold 35px Century Gothic, Arial;
+		/* font: bold 35px Century Gothic, Arial; */
+		font-family: Alfa Slab One;
+		font-size: 35px;
 		width: 100%;
 		height: 120px;
 		margin: -25px !important;
@@ -350,12 +394,13 @@
 					</a>
 				</div>
 				<div class="hoverMenu">
-					<button style="width: 50px;" class="btn sdbtn" onclick="document.getElementById(`sideHoverMenu`).classList.toggle(`d-none`	)">
+					<button style="width: 50px;" class="btn sdbtn"
+						onclick="document.getElementById(`sideHoverMenu`).classList.toggle(`d-none`	)">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-						class="bi bi-list" viewBox="0 0 16 16">
-						<path fill-rule="evenodd"
-							d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-					</svg>
+							class="bi bi-list" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+						</svg>
 					</button>
 				</div>
 				<div id="sideHoverMenu" class="sideHoverMenu">
@@ -457,22 +502,26 @@
 						</div>
 					</div>
 				</div>
-				<div class="bottomnav">
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">TRENDING</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">LIBRARY</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">SUBSCRIPTIONS</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">CELL VIDEOS</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">GALLERY</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">NEWS UPDATES</a>
-					<a class="bottomNavbtn" href="#">|</a>
-					<a class="bottomNavbtn" href="#">PODCAST</a>
-					<a class="bottomNavbtn" href="#">|</a>
+				<div class="footerNav">
+					<div class="footerNavItem">
+						<a class="footerPrev" onclick="plusSlides(-1, 0)">&#10094;</a>
+					</div>
+					<div class="footerNavItem">TRENDING</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">LIBRARY</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">SUBSCRIPTION</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">CELL VIDEOS</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">GALLERY</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">NEWS UPDATES</div>
+					<div class="footerNavItemSeperator">|</div>
+					<div class="footerNavItem">PODCAST</div>
+					<div class="footerNavItem">
+						<a class="footerNext" onclick="plusSlides(1, 0)">&#10095;</a>
+					</div>
 				</div>
 			</div>
 		</div>
