@@ -1,0 +1,89 @@
+Amazon is planning to open its warehouse in Gurugram. The Amazon operations head wants that employee output needs to be maximum. It can only happen when a stream of work coming in the warehouse is automatically assigned to the employee according to the skills of the employee in the shortest possible time so that no wastage of employee's working hours takes place. The automation should also take care of the priorities associated with the designation of the employees.
+
+There are some prior conditions also:
+1. Employee with the higher designation will take the job first if two or more employees have the same skills.
+
+For example, if two employees have designation W1 and W2, then employee with designation W1 will be given priority over employee having designation W2.
+
+2. If there are two jobs with the same priority and skills, then the job which will take less time to finish will be given preference.
+
+Considering that you are the software developer, you are asked to solve this problem of Amazon operations head in order to achieve maximum throughput in the warehouse.
+
+Note: No two employee with same designation.
+nput Format
+The first line of input consists of number of employees, N
+Next N lines each consists of string array containing the employees's designation and their skills
+separated by #.
+The next line of input consists of the stream of the work coming in the workhouse, M
+Next M lines each consists of a string array representing the stream of work coming in the warehouse. Each work is represented as one element of the array.
+Each work is of the below form
+Skill required to complete it#priority#Time it takes to finish#JobId.
+
+
+Constraints
+1 <= |S1|, |S2| <= 10^3
+
+Output Format
+You need to print the string array. Each element of the string array consists of employee's designation along with the job Ids of the work it has finished.
+String array should have employees in decreasing order of their designation i.e if there are 2 employees with designation W1 and W2, then W1 along with jobs it had solved will be first in the array.
+If an employee with designation W1 finish work with Job Ids 101,102,105, then it will be represented as W1#101#102#105.
+
+Sample TestCase 1
+onstraints
+1 <= |S1|, |S2| <= 10^3
+
+Output Format
+You need to print the string array. Each element of the string array consists of employee's designation along with the job Ids of the work it has finished.
+String array should have employees in decreasing order of their designation i.e if there are 2 employees with designation W1 and W2, then W1 along with jobs it had solved will be first in the array.
+If an employee with designation W1 finish work with Job Ids 101,102,105, then it will be represented as W1#101#102#105.
+nput
+4
+W1#S1
+W2#S2
+W3#S3
+W4#S1
+10
+S1#40#10#101
+S2#10#5#102
+S3#90#15#103
+S3#91#20#104
+S2#20#5#105
+S1#20#10#106
+S1#90#15#107
+S2#30#20#108
+S3#40#5#109
+S1#50#5#110
+Output
+W1#107#106
+W2#108#105#102
+W3#104#103#109
+W4#110#101
+Explanation
+Employees with designation W2 and W3 will work on their respective jobs according to their skills while there is a clash between employees with designation W1 and W4.
+W1 will take job 107 which takes time 15 hours to complete while W4 will take job 110 which took 5 hours to complete and then took job 101 and complete it in 10 hours.
+Both of them consumed 15 hours to complete the job.
+Now, the work with Job Id 106 is remaining and W1 will take the job as it has edge of designation over other employee.
+
+Sample TestCase 2
+Input
+4
+W1#S1
+W2#S2
+W3#S1
+W4#S2
+10
+S1#10#100#101
+S2#30#100#102
+S2#40#100#103
+S1#20#100#104
+S1#30#100#105
+S2#50#100#106
+S2#60#100#107
+S1#50#100#108
+S1#50#200#109
+S2#20#100#110
+Output
+W1#108#105#104
+W2#107#103#110
+W3#109#101
+W4#106#102
