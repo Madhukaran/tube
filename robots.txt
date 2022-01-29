@@ -9,3 +9,5 @@ Disallow: /install
 Disallow: /admincp
 Disallow: /admin-panel
 Disallow: /embed
+Disallow: /admin-panel
+Disallow: /class
